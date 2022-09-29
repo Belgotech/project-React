@@ -1,0 +1,48 @@
+import React from 'react';
+
+const MovieCard = ({ movie: { imdbID, Year, Poster, Title, Type } }) => {
+  return (
+    <div className="movie" key={imdbID}>
+      <div>
+        <p>{Year}</p>
+      </div>
+
+      <div>
+        <img src={Poster !== "N/A" ? Poster : "https://via.placeholder.com/400"} alt={Title} />
+      </div>
+
+      <div>
+        <span>{Type}</span>
+        <h3>{Title}</h3>
+      </div>
+    </div>
+  );
+}
+
+export default MovieCard;
+
+
+
+
+// import React from 'react'
+
+// const MovieCard = () => {
+//     return (
+//         <div className="movie">
+//           <div>
+//             <p>{movie1.year}</p>
+//           </div>
+
+//           <div>
+//             <img src={movie1.poster !=='N/A' ? movie1.poster  : 'https://via.placeholder.com/400'} alt={movie1.Title}/>
+//           </div>
+
+//           <div>
+//             <span>{movie1.Type}</span>
+//             <h3>{movie1.Title}</h3>
+//           </div>
+//         </div>
+//     )
+// }
+
+// export default MovieCard

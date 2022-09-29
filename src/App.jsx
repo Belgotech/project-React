@@ -1,39 +1,101 @@
-import { useEffect } from "react";
-// import "./App.css";
-// import Nav from "./Components/Nav/Nav";
-const API_URL = "https://www.omdbadi.com?apikey=";
+import React, { useState, useEffect } from "react";
+
+import MovieCard from "./MovieCard";
+// import SearchIcon from "./search.svg";
+import "./App.css";
+
+const API_URL = "http://www.omdbapi.com?apikey=b6003d8a";
 
 const App = () => {
-  const searchMovie = async (title) => {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [movies, setMovies] = useState([]);
+
+  useEffect(() => {
+    searchMovies("Batman");
+  }, []);
+
+  const searchMovies = async (title) => {
     const response = await fetch(`${API_URL}&s=${title}`);
     const data = await response.json();
 
-    console.log(data.search);
+    setMovies(data.Search);
   };
 
-  useEffect(() => {
-    searchMovie("Batman");
-  }, []);
-
   return (
-    <div className="App">
-      <h1>Movie Zone</h1>
+    <div className="app">
+      <h1>MovieLand</h1>
 
       <div className="search">
         <input
-          type="text"
-          placeholder="search for movies"
-          value="Superman"
-          onchange={() => {}}
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          placeholder="Search for movies"
         />
-        <img src={searchIcon} alt="search" onClick={() => {}} />
+        <img
+          // src={SearchIcon}
+          alt="search"
+          onClick={() => searchMovies(searchTerm)}
+        />
       </div>
 
-      <div className="container">
-        
-      </div>
+      {movies?.length > 0 ? (
+        <div className="container">
+          {movies.map((movie) => (
+            <MovieCard movie={movie} />
+          ))}
+        </div>
+      ) : (
+        <div className="empty">
+          <h2>No movies found</h2>
+        </div>
+      )}
     </div>
   );
 };
 
 export default App;
+
+
+
+
+// import { useEffect } from "react";
+// import "./App.css";
+// import MovieCards from "./Components/MovieCards/MovieCard";
+// // const API_URL = "https://www.omdbadi.com?apikey=";
+
+// const API_URL = "http://www.omdbapi.com?apikey=b6003d8a";
+
+// const App = () => {
+//   const searchMovie = async (title) => {
+//     const response = await fetch(`${API_URL}&s=${title}`);
+//     const data = await response.json();
+
+//     console.log(data.search);
+//   };
+
+//   useEffect(() => {
+//     searchMovie("Batman");
+//   }, []);
+
+//   return (
+//     <div className="App">
+//       <h1>Movie Zone</h1>
+
+//       <div className="search">
+//         <input
+//           type="text"
+//           placeholder="search for movies"
+//           value="Superman"
+//           onchange={() => {}}
+//         />
+//         {/* <img src={searchIcon} alt="search" onClick={() => {}} /> */}
+//       </div>
+
+//       <div className="container">
+//         <MovieCard />
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default App;
