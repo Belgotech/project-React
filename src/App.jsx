@@ -1,34 +1,46 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { useState, useEffect } from 'react'
+// import "./App.css";
+// import Nav from "./Components/Nav/Nav";
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+     
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
+
+
+
+
+
+
+// import { useState, useEffect } from 'react'
+// import "./App.css";
+// import Nav from "./Components/Nav/Nav";
+
+// function App() {
+//   const [counter, setCounter] = useState(0)
+
+//   useEffect(()=>{
+//     setCounter(100)
+//   }, [])
+
+//   return (
+//     <div className="App">
+//       <Nav name="john" lastName="doe" age={10 + 10} />
+//       <Nav name="samuel" lastName="emmanuel" age="30" />
+//       <Nav name="ella" lastName="judge" age="19" />
+
+//       <button onClick={()=> setCounter((prevCount)=> prevCount -1)}>-</button>
+//       <h2>{counter}</h2>
+//       <button onClick={()=> setCounter((prevCount)=> prevCount +1)}>+</button>
+//       {/* <button onClick={()=> setCounter((prevCounter)=> prevCounter -2)}>-</button> */}
+//     </div>
+//   );
+// }
+
+// export default App;
