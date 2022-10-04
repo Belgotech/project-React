@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 import "./App.css";
 import Nav from "./Components/Nav/Nav";
 
@@ -17,14 +17,15 @@ function App() {
   // ]
   // }
   // )
+  // const [switchNameHandler, setSwitchNameHandler] = useState[0];
 
-  const [switchNameHandler, setSwitchNameHandler] = useState[0];
-
-  setSwitchNameHandler((person[0].name = "janny"));
+const switchNameHandler = ()=>{
+  person[0].name = "janny"
+};
 
   return (
     <div className="App">
-      <button onClick={setSwitchNameHandler}>switchName</button>
+      <button onClick={switchNameHandler}>switchName</button>
       <Nav name={person[0].name} age={person[1].age}>
         {" "}
         hobby: coding
