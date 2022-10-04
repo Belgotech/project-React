@@ -1,22 +1,40 @@
-import { useState, useEffect } from 'react'
-// import "./App.css";
-// import Nav from "./Components/Nav/Nav";
+import { useState, useEffect } from "react";
+import "./App.css";
+import Nav from "./Components/Nav/Nav";
 
 function App() {
+  const person = [
+    { name: "jnae", age: 23 },
+    { name: "julie", age: 33 },
+  ];
+
+  // const switchNameHandler = ()=>{
+  //   // console.log('was clicked');
+  //   setState(
+  //   const person = [
+  //   {name: 'janny', age: 23},
+  //   {name: 'julie', age: 33}
+  // ]
+  // }
+  // )
+
+  const [switchNameHandler, setSwitchNameHandler] = useState[0];
+
+  setSwitchNameHandler((person[0].name = "janny"));
 
   return (
     <div className="App">
-     
+      <button onClick={setSwitchNameHandler}>switchName</button>
+      <Nav name={person[0].name} age={person[1].age}>
+        {" "}
+        hobby: coding
+      </Nav>
+      <Nav name="jane" age={person[1].name} />
     </div>
   );
 }
 
 export default App;
-
-
-
-
-
 
 // import { useState, useEffect } from 'react'
 // import "./App.css";
