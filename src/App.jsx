@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import Nav from "./Components/Nav/Nav";
 
-const App = (props) => {
+const App = (newName) => {
   const [personState, setPersonState] = useState({
     person: [
       { name: "jnae", age: 23 },
@@ -20,7 +20,7 @@ const App = (props) => {
   const switchNameHandler = () => {
     setPersonState({
       person: [
-        { name: "janny", age: 23 },
+        { name: newName, age: 23 },
         { name: "julie", age: 35 },
       ],
       otherState: personState.otherState, // if you do not want to change the old state but just want it to be passed to the new state
@@ -29,11 +29,11 @@ const App = (props) => {
 
   return (
     <div className="App">
-      <button onClick={switchNameHandler}>switchName</button>
+      <button onClick={switchNameHandler.bind('janny')}>switchName</button>
       <Nav 
         name={personState.person[0].name} 
         age={personState.person[1].age}
-        click={switchNameHandler}>
+        click={switchNameHandler.bind('janny')}>
         hobby: coding
       </Nav>
       <Nav name="jane" age={personState.person[1].age} />
