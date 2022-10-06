@@ -4,7 +4,7 @@ const Nav = (props) => {
     return (
         <div>
             <p onClick={props.click}> my name is {props.name} i am {props.age}  </p>
-            <input type="text" onChange={props.changed} />
+            <input type="text" onChange={props.changed} value={props.name}/>
             <p>{props.children}</p>
         </div>
     )
