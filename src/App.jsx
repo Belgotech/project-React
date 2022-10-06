@@ -1,26 +1,22 @@
-// import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import Nav from "./Components/Nav/Nav";
 
-function App() {
-  const person = [
-    { name: "jnae", age: 23 },
-    { name: "julie", age: 33 },
-  ];
-
-  // const switchNameHandler = ()=>{
-  //   // console.log('was clicked');
-  //   setState(
-  //   const person = [
-  //   {name: 'janny', age: 23},
-  //   {name: 'julie', age: 33}
-  // ]
-  // }
-  // )
-  // const [switchNameHandler, setSwitchNameHandler] = useState[0];
+function App(props) {
+  const [personState, setPersonState] = useState({
+    person : [
+      { name: "jnae", age: 23 },
+      { name: "julie", age: 33 }
+    ]
+  });
 
 const switchNameHandler = ()=>{
-  person[0].name = "janny"
+    setPersonState({
+    person: [
+    { name: "janny", age: 23 },
+    { name: "julie", age: 35 },
+  ]
+})
 };
 
   return (
