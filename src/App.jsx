@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import Nav from "./Components/Nav/Nav";
 
-function App(props) {
+const App = (props)=> {
   const [personState, setPersonState] = useState({
     person: [
       { name: "jnae", age: 23 },
