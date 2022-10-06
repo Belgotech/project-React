@@ -4,7 +4,7 @@ import Nav from "./Components/Nav/Nav";
 
 function App(props) {
   const [personState, setPersonState] = useState({
-    person : [
+    person: [
       { name: "jnae", age: 23 },
       { name: "julie", age: 33 }
     ]
@@ -22,11 +22,11 @@ const switchNameHandler = ()=>{
   return (
     <div className="App">
       <button onClick={switchNameHandler}>switchName</button>
-      <Nav name={person[0].name} age={person[1].age}>
+      <Nav name={personState.person[0].name} age={personState.person[1].age}>
         {" "}
         hobby: coding
       </Nav>
-      <Nav name="jane" age={person[1].name} />
+      <Nav name="jane" age={personState.person[1].name} />
     </div>
   );
 }
