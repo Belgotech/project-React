@@ -2,30 +2,30 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import Nav from "./Components/Nav/Nav";
 
-const App = (props)=> {
+const App = (props) => {
   const [personState, setPersonState] = useState({
     person: [
       { name: "jnae", age: 23 },
-      { name: "julie", age: 33 }
+      { name: "julie", age: 33 },
     ],
-    otherState:'this is another state'
+    otherState: "this is another state",
   });
 
-  const[anotherState, setAnotherState] = useState({
-    another: 'using state more than once'
-  })
+  const [anotherState, setAnotherState] = useState({
+    another: "using state more than once",
+  });
 
   console.log(personState, anotherState);
 
-const switchNameHandler = ()=>{
+  const switchNameHandler = () => {
     setPersonState({
-    person: [
-    { name: "janny", age: 23 },
-    { name: "julie", age: 35 },
-  ],
-  otherState: personState.otherState // if you do not want to change the old state but just want it to be passed to the new state
-})
-};
+      person: [
+        { name: "janny", age: 23 },
+        { name: "julie", age: 35 },
+      ],
+      otherState: personState.otherState, // if you do not want to change the old state but just want it to be passed to the new state
+    });
+  };
 
   return (
     <div className="App">
@@ -37,7 +37,7 @@ const switchNameHandler = ()=>{
       <Nav name="jane" age={personState.person[1].age} />
     </div>
   );
-}
+};
 
 export default App;
 
