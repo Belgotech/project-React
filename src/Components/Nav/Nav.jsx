@@ -3,7 +3,7 @@ import React from 'react'
 const Nav = (props) => {
     return (
         <div>
-            <p> my name is {props.name} i am {props.age} </p>
+            <p onClick={props.click}> my name is {props.name} i am {props.age}  </p>
             <p>{props.children}</p>
         </div>
     )

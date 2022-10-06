@@ -30,8 +30,10 @@ const App = (props) => {
   return (
     <div className="App">
       <button onClick={switchNameHandler}>switchName</button>
-      <Nav name={personState.person[0].name} age={personState.person[1].age}>
-        {" "}
+      <Nav 
+        name={personState.person[0].name} 
+        age={personState.person[1].age}
+        click={switchNameHandler}>
         hobby: coding
       </Nav>
       <Nav name="jane" age={personState.person[1].age} />
