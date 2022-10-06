@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 import Nav from "./Components/Nav/Nav";
+import UserInput from './Components/user/UserInput'
+import UserOutput from './Components/user/UserOutput'
 
 const App = () => {
   const [personState, setPersonState] = useState({
@@ -37,6 +39,28 @@ const App = () => {
     });
   };
 
+  const [userName, setUserName] = useState({
+    users: [
+      {user1: "jerrian"}
+    ]
+  })
+
+  const changeUserHandler =()=>{
+    setUserName({
+      users: [
+        {user1: "ddjerrian"}
+      ]
+    })
+  }
+
+  const typerHandler =(event)=>{
+    setUserName({
+      users: [
+        {user1: event.target.value}
+      ]
+    })
+  }
+
   const style = {
     backgroundColor: 'blue',
     // color: 'blue',
@@ -55,6 +79,13 @@ const App = () => {
         hobby: coding
       </Nav>
       <Nav name="jane" age={personState.person[1].age} />
+
+      <UserInput />
+      <UserOutput name={userName.users[0].user1} 
+      type={typerHandler} />
+      <UserOutput name={userName.users[0].user1} 
+      type={typerHandler} />
+      {/* <UserOutput name={userName.users[0].user1} /> */}
     </div>
   );
 };
