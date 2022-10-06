@@ -37,14 +37,21 @@ const App = () => {
     });
   };
 
+  const style = {
+    backgroundColor: 'blue',
+    // color: 'blue',
+    padding: "1rem"
+  }
+
   return (
     <div className="App">
-      <button onClick={switchNameHandler}>switchName</button>
+      <button onClick={switchNameHandler} style={style}>switchName</button>
       <Nav 
         name={personState.person[0].name} 
         age={personState.person[1].age}
         click={switchNameHandler}
-        changed={changedNameHandler}>
+        changed={changedNameHandler}
+        >
         hobby: coding
       </Nav>
       <Nav name="jane" age={personState.person[1].age} />
