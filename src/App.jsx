@@ -7,15 +7,23 @@ function App(props) {
     person: [
       { name: "jnae", age: 23 },
       { name: "julie", age: 33 }
-    ]
+    ],
+    otherState:'this is another state'
   });
+
+  const[anotherState, setAnotherState] = useState({
+    another: 'using state more than once'
+  })
+
+  console.log(personState, anotherState);
 
 const switchNameHandler = ()=>{
     setPersonState({
     person: [
     { name: "janny", age: 23 },
     { name: "julie", age: 35 },
-  ]
+  ],
+  otherState: personState.otherState // if you do not want to change the old state but just want it to be passed to the new state
 })
 };
 
@@ -26,7 +34,7 @@ const switchNameHandler = ()=>{
         {" "}
         hobby: coding
       </Nav>
-      <Nav name="jane" age={personState.person[1].name} />
+      <Nav name="jane" age={personState.person[1].age} />
     </div>
   );
 }
