@@ -27,13 +27,24 @@ const App = () => {
     });
   };
 
+  const changedNameHandler = (event) => {
+    setPersonState({
+      person: [
+        { name: event.target.value, age: 23 },
+        { name: "julie", age: 35 },
+      ],
+      otherState: personState.otherState, // if you do not want to change the old state but just want it to be passed to the new state
+    });
+  };
+
   return (
     <div className="App">
       <button onClick={switchNameHandler}>switchName</button>
       <Nav 
         name={personState.person[0].name} 
         age={personState.person[1].age}
-        click={switchNameHandler}>
+        click={switchNameHandler}
+        changed={changedNameHandler}>
         hobby: coding
       </Nav>
       <Nav name="jane" age={personState.person[1].age} />
