@@ -1,11 +1,7 @@
 import React from 'react'
 
-const Footer = (props) => {
-    return (
-        <div>
-            <input type="text" onChange={props.type} />
-        </div>
-    )
+const UserInput = (props) => {
+    return <input type="text" onChange={props.type}  value={props.currentName}/>
 }
 
-export default Footer
+export default UserInput

@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 import Nav from "./Components/Nav/Nav";
-import UserInput from './Components/user/UserInput'
-import UserOutput from './Components/user/UserOutput'
+import UserInput from "./Components/user/UserInput";
+import UserOutput from "./Components/user/UserOutput";
 
 const App = () => {
   const [personState, setPersonState] = useState({
@@ -39,53 +39,48 @@ const App = () => {
     });
   };
 
-  const [userName, setUserName] = useState({
-    users: [
-      {user1: "jerrian"}
-    ]
-  })
+  const [userName, setUserName] = useState({user1: "jerrian"});
 
-  const changeUserHandler =()=>{
-    setUserName({
-      users: [
-        {user1: "ddjerrian"}
-      ]
-    })
-  }
+  // const changeUserHandler = () => {
+  //   userName({
+  //     users: [{ user1: "ddjerrian" }],
+  //   });
+  // };
 
-  const typerHandler =(event)=>{
-    setUserName({
-      users: [
-        {user1: event.target.value}
-      ]
-    })
-  }
+  const typerHandler = (event) => {
+    setUserName({ user1: event.target.value });
+  };
 
   const style = {
-    backgroundColor: 'blue',
+    backgroundColor: "blue",
     // color: 'blue',
-    padding: "1rem"
-  }
+    padding: "1rem",
+  };
 
   return (
     <div className="App">
-      <button onClick={switchNameHandler} style={style}>switchName</button>
-      <Nav 
-        name={personState.person[0].name} 
+      <button onClick={switchNameHandler} style={style}>
+        switchName
+      </button>
+      <Nav
+        name={personState.person[0].name}
         age={personState.person[1].age}
         click={switchNameHandler}
         changed={changedNameHandler}
-        >
+      >
         hobby: coding
       </Nav>
-      <Nav name="jane" age={personState.person[1].age} />
+      {/* <Nav name="jane" age={personState.person[1].age} /> */}
 
       <UserInput />
-      <UserOutput name={userName.users[0].user1} 
-      type={typerHandler} />
-      <UserOutput name={userName.users[0].user1} 
-      type={typerHandler} />
-      {/* <UserOutput name={userName.users[0].user1} /> */}
+      <UserOutput 
+      name={userName.user1} 
+      type={typerHandler} 
+      currentName={userName.user1}
+      />
+      {/* <UserOutput name={userName.users[0].user1} 
+      type={typerHandler} /> */}
+      <UserOutput />
     </div>
   );
 };
