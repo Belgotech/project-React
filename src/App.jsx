@@ -76,7 +76,7 @@ const App = () => {
       <UserOutput 
       name={userName.user1} 
       type={typerHandler} 
-      currentName={userName.user1}
+      currentName={useState.user1}
       />
       {/* <UserOutput name={userName.users[0].user1} 
       type={typerHandler} /> */}
